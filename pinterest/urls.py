@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.conf.urls import handler404
 from django.contrib import admin
 from django.urls import path, include
+from django.views.static import serve
 
 from articleapp.views import customHandler404
 
@@ -30,5 +31,8 @@ urlpatterns = [
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
     path('articles/', include('articleapp.urls')),
+
+    #url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    #url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
