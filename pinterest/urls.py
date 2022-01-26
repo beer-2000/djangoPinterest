@@ -20,10 +20,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.static import serve
 
-from articleapp.views import customHandler404
-
-
-handler400 = customHandler404.as_view()
+#from articleapp.views import customHandler404
+#handler400 = customHandler404.as_view()
 
 urlpatterns = [
 
