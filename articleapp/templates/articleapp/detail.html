@@ -4,17 +4,24 @@
 {% block content %}
 
     <div>
-        <div>
+        <div style="text-align: center;">
 
-            <h1>
+            <h2>
                 {{ target_article.title }}
-            </h1>
+            </h2>
 
             <img src="{{ target_article.image.url }}" alt="">
 
             <p>
                 {{ target_article.content }}
             </p>
+
+            <a href="{% url 'articleapp:update' pk=target_article.pk %}" class="btn btn-dark rounded-pill col-4 mt-5 mb-3"%>
+                <p>Update Article</p>
+            </a>
+            <a href="{% url 'articleapp:delete' pk=target_article.pk %}" class="btn btn-dark rounded-pill col-4 mt-5 mb-3"%>
+                <p>Delete Article</p>
+            </a>
 
         </div>
     </div>
