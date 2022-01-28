@@ -2,24 +2,26 @@
         <div>
             <h1 class="djangoPinterest_logo">djangoPinterest</h1>
         </div>
-        <div style="font-size: .8rem; margin: 1.5rem 0;">
-            <a href="{% url 'articleapp:list' %}">
+        <div class="djangopinterst_header_navbar">
+            <a href="{% url 'articleapp:list' %}" class="djangopinterst_header_nav">
                 <span>Articles</span>
             </a>
-            <span>nav2</span>
+            <a href="{% url 'projectapp:list' %}" class="djangopinterst_header_nav">
+                <span>Projects</span>
+            </a>
             <span>nav3</span>
             {% if not user.is_authenticated %}
-            <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="djangopinterst_header_nav">
                 <span>login</span>
             </a>
-            <a href="{% url 'accountapp:create' %}">
+            <a href="{% url 'accountapp:create' %}" class="djangopinterst_header_nav">
                 <span>SignUp</span>
             </a>
             {% else %}
-            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <a href="{% url 'accountapp:detail' pk=user.pk %}" class="djangopinterst_header_nav">
                 <span>MyPage</span>
             </a>
-            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="djangopinterst_header_nav">
                 <span>logout</span>
             </a>
             {% endif %}
