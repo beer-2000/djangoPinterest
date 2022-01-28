@@ -14,8 +14,10 @@ class CommentCreateView(CreateView):
     form_class = CommentCreationForm
     template_name = 'commentapp/create.html'
 
-    def form_vaild(self, form):
+    def form_valid(self, form):
         temp_comment = form.save(commit=False)
+        print("look at this")
+        print(self.request.POST['article_pk'])
         temp_comment.article = Article.objects.get(pk=self.request.POST['article_pk'])
         temp_comment.writer = self.request.user
         temp_comment.save()
@@ -23,3 +25,4 @@ class CommentCreateView(CreateView):
 
     def get_success_url(self):
         return reverse('articleapp:detail', kwargs={'pk': self.object.article.pk})
+        #return reverse('articleapp:detail', kwargs={'pk': self.request.POST['article_pk']})
