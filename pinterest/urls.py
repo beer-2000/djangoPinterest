@@ -20,10 +20,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.static import serve
 
+from articleapp.views import ArticleListView
+
 #from articleapp.views import customHandler404
 #handler400 = customHandler404.as_view()
 
 urlpatterns = [
+    path('', ArticleListView.as_view(), name='home'),
 
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
