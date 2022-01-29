@@ -9,6 +9,10 @@
             <a href="{% url 'projectapp:list' %}" class="djangopinterst_header_nav">
                 <span>Projects</span>
             </a>
+        </a>
+        <a href="{% url 'subscribeapp:list' %}" class="djangopinterst_header_nav">
+            <span>Subscription</span>
+        </a>
             {% if not user.is_authenticated %}
             <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="djangopinterst_header_nav">
                 <span>login</span>
