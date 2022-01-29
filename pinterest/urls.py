@@ -31,6 +31,7 @@ urlpatterns = [
     path('articles/', include('articleapp.urls')),
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
+    path('subscribe/', include('subscribeapp.urls')),
 
     #url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     #url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
